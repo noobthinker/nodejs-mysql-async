@@ -1,0 +1,77 @@
+extends layout
+
+
+block content
+    section.content
+        .row
+            .col-xs-12
+                .box
+                    .box-header
+                        h3.box-title 用户信息表
+                        .box-body
+                            table.table.table-bordered.table-hover
+                                thead
+                                tr
+                                    th id
+                                    th 1
+                                    th 2
+                                    th 3
+                                    th 4
+                                    th 5
+                                    th 6
+                                    th 7
+                                    th 8
+                                    th 9
+                                    th 10
+                                    th 0
+                                each val in data
+                                    tr
+                                        th=val.id
+                                        th=val.imsi
+                                        th=val.balance
+                                        th=val.balance_pay
+                                        th=val.last_position
+                                        th=moment(val.last_use).format("YYYY/MM/DD")
+                                        th=val.balance_data
+                                        th=val.last_data
+                                        th=val.last_fast_data
+                                        th=val.speed_limit
+                                        th=val.srv_status
+                                        th=val.vip_flag
+    section.content
+        .row
+            .col-xs-12
+                .box
+                    .box-header
+                        h3.box-title 表
+                        .box-body
+                            table.table.table-bordered.table-hover
+                                thead
+                                tr
+                                    th id
+                                    th 1
+                                    th 2
+                                    th 3
+                                    th 4
+                                    th 5
+                                    th 6
+                                    th 7
+                                    th 8
+                                    th 9
+                                    th 10
+                                    th 0
+                                each val in fee
+                                    tr
+                                        th=val.id
+                                        th=val._100mvip_money
+                                        th=val._1dmoney
+                                        th=val._1gmoney
+                                        th=val.limit_speed_fast
+                                        th=val.limit_speed_normal
+                                        th=val.limit_speed_slow
+                                        th=val.ops
+                                        th=val.speed_fast
+                                        th=val.speed_normal
+                                        th=val.speed_slow
+                                        th=val._100mvip_data
+    a(href='/').btn.btn-block.btn-social 返回

@@ -1,0 +1,69 @@
+extends layout
+
+
+block content
+    section.content
+        .row
+            .col-xs-12
+                .box
+                    .box-header
+                        h3.box-title 用户信息表
+                        .box-body
+                            table.table.table-bordered.table-hover
+                                thead
+                                tr
+                                    th id
+                                    th 1
+                                    th 2
+                                    th 3
+                                    th 4
+                                    th 5
+                                    th 6
+                                    th 7
+                                    th 8
+                                    th 9
+                                    th 0
+                                    th 10
+                                each val in data
+                                    tr
+                                        th=val.id
+                                        th=val.imsi
+                                        th=val.balance
+                                        th=val.balance_pay
+                                        th=val.last_position
+                                        th=moment(val.last_use).format("YYYY/MM/DD")
+                                        th=val.balance_data
+                                        th=val.last_data
+                                        th=val.last_fast_data
+                                        th=val.speed_limit
+                                        th=val.srv_status
+                                        th=val.vip_flag
+    section.content
+        .row
+            .col-xs-12
+                .box
+                    .box-header
+                        h3.box-title table
+                        .box-body
+                            table.table.table-bordered.table-hover
+                                thead
+                                tr
+                                    th id
+                                    th 1
+                                    th 2
+                                    th 3
+                                    th 4
+                                each val in dat
+                                    tr
+                                        th=val.id
+                                        th=val.imsi
+                                        th=val.size
+                                        th=moment(val.zone_date).format("YYYY/MM/DD")
+                                        th=val.zone
+
+
+                    .box-footer
+                        form(action='exec')
+                            input(type='hidden' name='imsi' value=imsi)
+                            input(type='submit',value='sumit').btn.btn-primary
+                            a(href='/').btn 返回

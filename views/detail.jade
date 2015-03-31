@@ -1,0 +1,56 @@
+extends layout
+
+block content
+    section.content
+        .row
+            .col-xs-12
+                form(action='/m',method='post')
+                    .box.box-primary
+                        .box-header
+                            h3.box-title 修改
+                                .box-body
+                                    each val in data
+                                        .form-group
+                                            label(for='id') id
+                                            input(name='id',disabled,value=val.id)
+                                            input(type='hidden',name='id',value=val.id)
+                                        .form-group
+                                            label(for='imsi') imsi
+                                            input(disabled,value=val.imsi)
+                                            input(type='hidden',name='imsi',value=val.imsi)
+                                        .form-group
+                                            label 1
+                                            input(name='balance',value=val.balance)
+                                        .form-group
+                                            label 2
+                                            input(name='balance_pay',value=val.balance_pay)
+                                        .form-group
+                                            label 3
+                                            input(name='last_position',value=val.last_position)
+                                        .form-group
+                                            label 4
+                                            input(name='last_use',value=moment().format("YYYY-MM-DD"))
+                                        .form-group
+                                            label 5
+                                            input(name='balance_data',value=val.balance_data)
+                                        .form-group
+                                            label 6
+                                            input(name='last_data',value=val.last_data)
+                                        .form-group
+                                            label 7
+                                            input(name='last_fast_data',value=val.last_fast_data)
+                                        .form-group
+                                            label 8
+                                            input(name='speed_limit',value=val.speed_limit)
+                                        .form-group
+                                            label 9
+                                            input(name='srv_status',value=val.srv_status)
+                                        .form-group
+                                            label 10
+                                            input(name='vip',value=val.vip_flag)
+                    .box-footer
+                        input(type='submit',value='修改').btn.btn-primary
+                        a(href='/').btn 返回
+                        if(typeof(data[0].id)!== 'undefined')
+                            a(href='/test/'+data[0].id).btn 测试
+
